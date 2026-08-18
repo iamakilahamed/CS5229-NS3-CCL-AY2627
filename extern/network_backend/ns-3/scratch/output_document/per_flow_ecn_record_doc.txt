@@ -1,0 +1,9 @@
+This records each individual ECN mark,
+it will be quite heavy so we turn it off by default.
+If you want to see it, turn it on in config file.
+
+[ECN mark time], [ECN marked on switch ID], [pkt's sender ID], [pkt's receiver ID], [sender port], [receiver port], [switch's ifindex], [switch's queue index], [packet size]
+15093711, 33, 9, 17, 10000, 100, 9, 3, 1036
+15109279, 33, 14, 22, 10000, 100, 9, 3, 1036
+15562240, 35, 27, 3, 10000, 100, 12, 3, 1036
+15573435, 35, 29, 5, 10000, 100, 12, 3, 1036

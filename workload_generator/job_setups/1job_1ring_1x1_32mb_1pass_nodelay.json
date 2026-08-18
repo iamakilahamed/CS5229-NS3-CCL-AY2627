@@ -1,0 +1,11 @@
+{
+    "1": {
+        "input_filename": "workloads_text/1_job_32mb/job1.txt",
+        "npu_indices": [
+            0, 1, 2, 3
+        ],
+        "num_passes": 1,
+        "num_dims": 1,
+        "start_delay_us": 0
+    }
+}

@@ -1,0 +1,10 @@
+[number of nodes] [number of switches] [number of links]
+[id of switch] [id of switch] [id of switch] [id of switch] [id of switch] [id of switch] [id of switch] 
+[Link: node_id node_id speed delay error_rate]
+[Link: ]
+[Link: ]
+[Link: ]
+[Link: ]
+[Link: ]
+[Link: ]
+

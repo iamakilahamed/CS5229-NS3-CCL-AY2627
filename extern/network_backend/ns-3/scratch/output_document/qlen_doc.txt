@@ -1,0 +1,17 @@
+Record the queue length of each switch's port.
+Note it's sampling based, and if queue is empty, no record is made to save space.
+
+time [time record] [switch ID] j [switch ifindex] [queue length in Bytes] ...
+time 15060000 32 j 9 6216 j 10 6216 j 11 6216 j 12 6216
+time 15060000 33 j 9 24864 j 11 6216 
+time 15060000 34 j 11 18648 j 12 6216
+time 15060000 35 j 10 12432 j 12 18648
+time 15070000 32 j 9 14504 j 10 14504 j 11 14504 j 12 14504
+time 15070000 33 j 9 56980 j 11 12432 
+time 15070000 34 j 11 42476 j 12 14504
+time 15070000 35 j 10 27972 j 12 45584
+time 15080000 32 j 9 14504 j 10 13468 j 11 14504 j 12 14504
+time 15080000 33 j 9 55944 j 11 13468 
+time 15080000 34 j 11 43512 j 12 14504
+time 15080000 35 j 10 29008 j 11 1036 j 12 44548
+time 15080000 37 j 1 1036 

@@ -1,0 +1,63 @@
+.DS_Store
+
+*.diff
+*.orig
+*.patch
+*.rej
+
+*.o
+*.pyc
+*.pyo
+
+*.cwnd
+*.dat
+*.log
+*.mob
+*.pcap
+*.plt
+*.routes
+*.tr
+[D|U]l[A-Z][a-z]*Stats.txt
+
+\#*#
+*~
+
+testpy-output
+
+bindings/python/pybindgen/
+
+venv/
+
+ms_print.*
+massif.*
+coverity
+TAGS
+
+.lock-ns3_*
+.ns3rc
+
+build-dir/
+build/
+/.cproject
+/.project
+
+version.cache
+
+.gitlab-ci-local/
+.idea/
+cmake-*/
+vcpkg/
+
+.vs/
+
+# Ignore local cache used by e.g. clangd
+.cache/
+
+# Local reference material; not part of the course repository.
+# NOTE: match both spellings -- the directory that actually exists is
+# "reference codes" (with a space), which "reference_codes/" does not match.
+reference_codes/
+reference codes/
+
+# Generated python protobuf bindings for chakra (produced by the workload generator)
+extern/graph_frontend/chakra/et_def/et_def_pb2.py

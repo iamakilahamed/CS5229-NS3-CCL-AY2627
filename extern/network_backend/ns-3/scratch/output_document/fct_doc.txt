@@ -1,0 +1,12 @@
+Record each individual flow's information
+For the IP address, it's recorded in format of Hex-INT:
+e.g. 10.0.6.1 -> 0b.00.06.01 -> 0b000601
+For the [flow should last for] time, it is calculated by [flow data size] / bandwidth
+There might be some error since the processing have delay, 
+but comparing it with [flow last for], you can infer how much slower does this flow run, compare to ideal case.
+
+[Sender IP] [Receiver IP] [Sender Port] [Receiver Port] [flow data size] [flow start at] [flow last for] [flow should last for] 
+0b000601 0b000701 10000 100 2000000 10010 2029130 1682400
+0b000701 0b000001 10000 100 2000000 10010 2029130 1682400
+0b000001 0b000101 10000 100 2000000 10011 2029129 1682400
+0b000101 0b000201 10000 100 2000000 10010 2029130 1682400
