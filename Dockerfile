@@ -59,7 +59,7 @@ RUN cmake .. \
     -DCMAKE_CXX_STANDARD=14 \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="/opt/abseil-cpp-${ABSL_VER}/install"
-RUN cmake --build . --target install --config Release --parallel $(nproc)
+RUN cmake --build . --target install --config Release --parallel 2
 ENV absl_DIR="/opt/abseil-cpp-${ABSL_VER}/install"
 ### ======================================================
 
@@ -82,7 +82,7 @@ RUN cmake .. \
     -Dprotobuf_BUILD_TESTS=OFF \
     -Dprotobuf_ABSL_PROVIDER=package \
     -DCMAKE_INSTALL_PREFIX="/opt/protobuf-${PROTOBUF_VER}/install"
-RUN cmake --build . --target install --config Release --parallel $(nproc)
+RUN cmake --build . --target install --config Release --parallel 2
 ENV PATH="/opt/protobuf-${PROTOBUF_VER}/install/bin:$PATH"
 ENV protobuf_DIR="/opt/protobuf-${PROTOBUF_VER}/install"
 
