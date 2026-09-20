@@ -49,9 +49,24 @@ void ECMPLoadBalancing::RouteInput(Ptr<Packet> p, CustomHeader ch) {
     NS_ASSERT_MSG(!entry->second.empty(),
                   "No equal-cost next hop from switch " << m_switchId << " to destination " << ch.dip);
 
-    // Intentionally pathological: every flow for this destination uses the
-    // first installed equal-cost path. Students replace this with ECMP.
-    DoSwitchSend(p, ch, entry->second.front(), GetQueueIndex(ch));
+    // Implement ECMP by hashing the 5-tuple (SIP, DIP, Protocol, SPORT, DPORT).
+    uint64_t hash = 17;
+    hash = hash * 31 + ch.sip;
+    hash = hash * 31 + ch.dip;
+    hash = hash * 31 + ch.l3Prot;
+    
+    // Extract ports based on protocol type. 0x06 is TCP.
+    // Others typically use the UDP struct in the union for ports.
+    if (ch.l3Prot == 0x06) {
+        hash = hash * 31 + ch.tcp.sport;
+        hash = hash * 31 + ch.tcp.dport;
+    } else {
+        hash = hash * 31 + ch.udp.sport;
+        hash = hash * 31 + ch.udp.dport;
+    }
+
+    uint32_t path_index = hash % entry->second.size();
+    DoSwitchSend(p, ch, entry->second[path_index], GetQueueIndex(ch));
 }
 
 }  // namespace ns3

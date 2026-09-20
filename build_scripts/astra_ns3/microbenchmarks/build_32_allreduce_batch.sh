@@ -20,19 +20,19 @@ MEMORY="${SCRIPT_DIR:?}"/../../inputs/remote_memory/analytical/no_memory_expansi
 # The 256 MB x 4-pass entry is OPTIONAL: good supporting evidence for your report, but it
 # costs hours of simulation time per config per seed. Uncomment it only if you have the budget.
 WORKLOADS=( \
-  ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_32mb_1pass/job" \
+  # ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_32mb_1pass/job" \
   ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_64mb_1pass/job" \
-  ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_128mb_1pass/job" \
-  ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_256mb_1pass/job" \
-  #   ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_256mb_4pass/job" \
+  # ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_128mb_1pass/job" \
+  # ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_256mb_1pass/job" \
+  # ${SCRIPT_DIR:?}"/../../inputs/workload/microbenchmark_allreduce/32host_8ring_256mb_4pass/job" \
 )
 
 WORKLOAD_NAMES=( \
-  "multiring_8ring_32mb_32nodes" \
+  # "multiring_8ring_32mb_32nodes" \
   "multiring_8ring_64mb_32nodes" \
-  "multiring_8ring_128mb_32nodes" \
-  "multiring_8ring_256mb_1pass_32nodes" \
-  #   "multiring_8ring_256mb_4pass_32nodes" \
+  # "multiring_8ring_128mb_32nodes" \
+  # "multiring_8ring_256mb_1pass_32nodes" \
+  # "multiring_8ring_256mb_4pass_32nodes" \
 )
 
 # The communicator-group file that partitions the 32 hosts into 8 independent rings.
@@ -68,15 +68,15 @@ LOGICAL_TOPO_NAMES=( \
 # The network config for this test, do not change
 # If you want to test different network configs, please edit the "solution" config file
 NETWORKS=( \
-  "${NS3_DIR:?}"/scratch/config/spine_leaf_32_host_10g/config_spine_leaf_4_4_32_placeholder.txt \
+  # "${NS3_DIR:?}"/scratch/config/spine_leaf_32_host_10g/config_spine_leaf_4_4_32_placeholder.txt \
   "${NS3_DIR:?}"/scratch/config/spine_leaf_32_host_10g/config_spine_leaf_4_4_32_ecmp_baseline.txt \
-  "${NS3_DIR:?}"/scratch/config/spine_leaf_32_host_10g/config_spine_leaf_4_4_32_solution.txt \
+  # "${NS3_DIR:?}"/scratch/config/spine_leaf_32_host_10g/config_spine_leaf_4_4_32_solution.txt \
 )
 
 NETWORK_CONFIG_NAMES=( \
-  "4_4_32_placeholder" \
+  # "4_4_32_placeholder" \
   "4_4_32_ecmp_baseline" \
-  "4_4_32_solution" \
+  # "4_4_32_solution" \
 )
 
 OUTPUT_DIR="${NS3_DIR:?}"/scratch/output/
